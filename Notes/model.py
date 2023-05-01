@@ -22,13 +22,18 @@ def add_note(heading, body):
 def update_note(id_, heading, body):
     array = read_file()
     time = str(datetime.now())
+    n = 0
     for i in array:
         if i.get_id() == id_:
+            n = 1
             i.set_heading(heading)
             i.set_body(body)
             i.set_timedate(str(datetime.now()))
-    write_file(array, 'a')
-    print("Заметка изменена")
+            write_file(array, 'a')
+            print("Заметка изменена")
+    if n == 0:
+        print("Заметка с указанным идентификатором не найдена")
+
 
 
 
