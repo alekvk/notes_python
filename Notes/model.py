@@ -29,7 +29,7 @@ def update_note(id_, heading, body):
             i.set_timedate(str(datetime.now()))
     write_file(array, 'a')
     print("Заметка изменена")
-    
+
 
 
 def remove_note(id_):
